@@ -11,14 +11,16 @@
                             <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-success ">Mostra</a>
 
                             <form action="{{ route('admin.projects.destroy', $project->id) }}">
-                                <button type="submit">Elimina</button>
+                                <button type="submit" class="cancel-button">Elimina</button>
                             </form>
 
                         </td>
                     </tr>
                 @endforeach
+                <a href="{{ route('admin.projects.create', $project->id) }}" class="btn btn-success ">Crea</a>
 
             </tbody>
         </table>
     </section>
+    @include('partials.modal_delete');
 @endsection
