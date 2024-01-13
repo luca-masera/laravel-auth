@@ -10,7 +10,9 @@
                         <td class="d-flex justify-content-end align-items-center">
                             <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-success ">Mostra</a>
 
-                            <form action="{{ route('admin.projects.destroy', $project->id) }}">
+                            <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST">
+                                @csrf
+                                @method('delete')
                                 <button type="submit" class="cancel-button">Elimina</button>
                             </form>
 
