@@ -24,7 +24,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'title' => ['required', 'min:3', 'max:255', 'unique:projects'],
             'body' => ['nullable'],
-            'image' => ['nullable']
+            'image' => ['nullable', 'image', 'max:1024']
         ];
     }
     public function messages()
@@ -34,6 +34,8 @@ class StoreProjectRequest extends FormRequest
             'title.min' => 'Il titolo deve avere almeno :min caratteri',
             'title.max' => 'Il titolo deve avere almeno :max caratteri',
             'title.unique' => 'Questo titolo esiste già',
+            'image.image' => 'L\'Immagine deve essere di tipo image',
+            'image.max' => 'L\' Immagine deve essere massimo di 1 GB'
 
 
         ];

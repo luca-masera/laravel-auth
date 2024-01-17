@@ -24,6 +24,9 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
+            <div>
+                <img id="uploadPreview" width="100" src="https://picsum.photos/200/300">
+            </div>
 
             <div class="mb-3">
                 <label for="image">Image</label>
